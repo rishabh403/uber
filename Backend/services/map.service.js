@@ -67,7 +67,7 @@ module.exports.getAddressCoordinate = async(address)=>{
         try {
             const response = await axios.post(url,data,{
                 headers: {
-                    'X-Goog-Api-Key': "AIzaSyDvt7fp-pUgsk7ex6dllKuvO7hHZ8dhWyc",
+                    'X-Goog-Api-Key': process.env.GOOGLE_MAPS_API,
                     'X-Goog-FieldMask': 'routes.distanceMeters,routes.duration',
                     'Content-Type': 'application/json'
                 }});
@@ -125,11 +125,11 @@ module.exports.getAddressCoordinate = async(address)=>{
             input:input
         }
 
-    
+        
         try {
             const response = await axios.post(url,data,{
                 headers: {
-                    'X-Goog-Api-Key': 'AIzaSyDvt7fp-pUgsk7ex6dllKuvO7hHZ8dhWyc',
+                    'X-Goog-Api-Key': process.env.GOOGLE_MAPS_API,
                     'X-Goog-FieldMask': 'suggestions.placePrediction.text',
                     'Content-Type' : 'application/json'
                 }});
